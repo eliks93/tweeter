@@ -7,14 +7,36 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
+    
+    <!-- Google Font styling-->
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Roboto:300,300i,700,700i&display=swap" rel="stylesheet">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!-- Nav Bar CSS-->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
+    <!-- Header CSS-->
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+    <!-- New-Tweet CSS-->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+    <!-- Tweets CSS -->
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <script src="https://kit.fontawesome.com/90c02a267b.js" crossorigin="anonymous"></script>
+
+
   </head>
 
   <body>
@@ -22,8 +44,33 @@
     <nav>
       <span>tweeter</span>
     </nav>
+    <div id="spacer">
+    </div>
+    <header class="top">
+      <div>
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div>
+          <h2>Your Name</h2>
+      </div>
+  </header>
+    <div>
+    </div>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="./tweets" method="POST">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
+      <section class="tweet-container">
+
+      </section>
+    </main>
   </body>
 </html>

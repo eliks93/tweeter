@@ -1,0 +1,77 @@
+article.tweets  {
+  border: solid #545149;
+  border-width: 5px;
+  margin-top: 2em;
+  text-align: left;
+  padding-bottom: 5%;
+ 
+
+  
+}
+span.handle {
+  margin-top: 21px;
+  margin-right: 20px;
+  float: right;
+  visibility: hidden;
+  
+}
+
+article.tweets:hover span.handle {
+  visibility: visible;
+}
+
+article.tweets:hover {
+  border: solid #545149;
+  border-width: 5px;
+  margin-top: 2em;
+  text-align: left;
+  padding-bottom: 5%;
+  box-shadow: 10px 10px 5px grey;
+  font-weight: bold;
+  visibility: visible;
+}
+
+article.tweets header {
+  text-align: left;
+  margin-bottom: 10px
+  
+}
+
+article.tweets img {
+  vertical-align: middle;
+  margin-top: 1%;
+  margin-left: 1%
+}
+
+
+
+article.tweets p {
+  opacity: 100;
+  width: 96%;
+  padding-bottom: 25px;
+  background-color: #f4f1ec;
+  border: solid #545149;
+  border-bottom-width: 5px;
+  border-top: 0em;
+  border-right: 0;
+  border-left: 0;
+  margin-bottom: 0;
+  margin-right: 2%;
+  margin-left: 2%;
+  resize: none;
+}
+
+span.time {
+  float: left;
+  font-size: 50%;
+  margin-left: 2%;
+  margin-top: 0.75%;
+
+}
+footer i {
+  font-size: 50%;
+  float: right;
+  margin-right: 2%;
+  margin-top: 0.75%;
+
+}

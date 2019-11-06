@@ -18,8 +18,22 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ #spacer {
+   height: 120px;
+ }
+
+ main {
+   margin-right: 5%;
+   margin-left: 5%;
+   width: 90%;
+   text-align: center;
+   background-color: #f4f1ec;
+
+ }
