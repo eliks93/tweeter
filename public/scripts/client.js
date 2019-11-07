@@ -5,7 +5,7 @@
  */
 
 
-
+// function compares current time to time tweet was posted at and returns a string based on that number
 const createdTime = (createdAt) => {
   const currentTime = Date.now(); 
   const currentSeconds = currentTime / 1000
@@ -17,8 +17,8 @@ const createdTime = (createdAt) => {
   const days = hours / 24
   const months = days /30
   const years = days / 365
-console.log(secs)
-  
+  //variables above keep the if loops simple.
+
   if(secs < 60) {
     
     return "less than a minute";
@@ -35,12 +35,14 @@ console.log(secs)
     return `${Math.floor(years)} years ago`
   }
 }
-
+// validate text inputs into our tweets to ensure they are text. Invoked in the create tweet element function
 const escape =  function(str) {
   let p = document.createElement('p');
   p.appendChild(document.createTextNode(str));
   return p.innerHTML;
 }
+
+// creates a tweet element with all of the applicable markup
 
 const createTweetElement = (tweetData) => {
   const markUp =$(`
@@ -61,7 +63,7 @@ const createTweetElement = (tweetData) => {
 `);
 return markUp;
 }
-
+// renders all tweets contained in the tweet object database and appends them to the end of our tweet container
 const renderTweet = (tweets) => {
   for (const tweetData of tweets) {
     const $tweet = createTweetElement(tweetData); 
@@ -69,6 +71,7 @@ const renderTweet = (tweets) => {
   }
 }
 
+// load tweets on the page, it first empties the container so the page does not get duplicate tweets
 const loadTweets = function() {
   $('.tweet-container').empty();
   $.ajax('http://localhost:8080/tweets', { method: 'GET' })
@@ -76,8 +79,9 @@ const loadTweets = function() {
       renderTweet(tweets)
   })
 }
-
+// main driver function that actually populates the page and handles the logic of the submit button when new tweet is submitted
 $(document).ready(function() {
+  // function toggles a class to move the new tweet container up and down when clicked
   $( "main" ).toggleClass('move')
   loadTweets()
   $('#show-tweet').click(function() {
@@ -86,6 +90,7 @@ $(document).ready(function() {
        $('textarea').focus()
     }
   })
+  // function will submit the text area when enter is pressed. also prevents enter from making new lines
   $('textarea').on('keydown', function() {
     let keyPress = $(event.which);
     if(keyPress[0] === 13) {
