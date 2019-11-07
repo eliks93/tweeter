@@ -30,10 +30,18 @@ body {
  }
 
  main {
+   position: relative;
    margin-right: 5%;
    margin-left: 5%;
    width: 90%;
    text-align: center;
    background-color: #f4f1ec;
+   z-index: 1;
+   transition-property: top;
+   transition-duration: 1s;
+   top: 0;
+ }
 
+ main.move {
+   top: -200px
  }

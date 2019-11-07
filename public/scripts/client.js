@@ -75,7 +75,14 @@ const loadTweets = function() {
 }
 
 $(document).ready(function() {
+  $( "main" ).toggleClass('move')
   loadTweets()
+  $('#show-tweet').click(function() {
+    $( "main" ).toggleClass('move')
+    if($('main.move')) {
+       $('textarea').focus()
+    }
+  })
   $('.submit-tweet').submit(function(event){
     let data = $(this).serialize()
     console.log(data)

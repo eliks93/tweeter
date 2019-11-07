@@ -1,4 +1,8 @@
-input {
+section.new-tweet {
+  position: relative;
+  z-index: 1;
+}
+section input {
   margin-left: 2%;
   color: #FFF;
   background-color: #4056A1;
