@@ -81,9 +81,10 @@ const loadTweets = function() {
 }
 
 
+// main functionality inside doucment ready. ensures that all data is loaded before functions are invoked.
 
-// main driver function that actually populates the page and handles the logic of the submit button when new tweet is submitted
 $(document).ready(function() {
+
   //auto-expand for text area... it works, however it does keep adding rows for each extra row you make. Not hugely important given text limit, but if somone had small screen and pasted 5000 characters in it would screw with the formatting severely. 
   $(document)
     .one('focus.autoExpand', 'textarea.autoExpand', function(){
@@ -138,6 +139,7 @@ $(document).ready(function() {
       .then(function() {
         // resets the text area upon successful submission. The text area will not alter the text if an error is triggered.
         $('textarea').val('')
+        $('.counter').text('140')
           loadTweets()
     })
     }
