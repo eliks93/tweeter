@@ -84,16 +84,19 @@ $(document).ready(function() {
     }
   })
   $('.submit-tweet').submit(function(event){
-    let data = $(this).serialize()
-    console.log(data)
     event.preventDefault();
-    if(data.length > 140) {
-      alert("that shizz too long yo")
+    let data = $(this).serialize()
+    let counter = $('textarea').val()
+    
+    if(counter.length > 140) {
+      $('span.error').text('Too Many Characters')
       return
-    } else if (data === 'text=') {
-        alert("that shizz is nothing yo")
+    } else if (counter.length === 0) {
+        $('span.error').text('Tweet submission left empty')
         return
     } else {
+      
+    $('span.error').text('')
     $.ajax({ type: "POST", url: '/tweets', data: data,})
       .then(function() {
           loadTweets()

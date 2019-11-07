@@ -44,6 +44,7 @@ article.tweets img {
 }
 
 article.tweets p {
+  display: block;
   opacity: 100;
   width: 96%;
   padding-bottom: 25px;
@@ -57,6 +58,7 @@ article.tweets p {
   margin-right: 2%;
   margin-left: 2%;
   resize: none;
+  overflow-wrap: break-word;
 }
 
 span.time {

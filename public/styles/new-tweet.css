@@ -39,3 +39,8 @@ textarea {
   text-align: left;
   margin-bottom: .25em;
 }
+
+span.error {
+  z-index: 4;
+  color: red
+}
