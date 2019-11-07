@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -41,7 +44,7 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav id="nav">
       <span class='logo'>tweeter</span>
       <span class ="write-tweet"><b>Write</b> a new tweet</span>
       <div class="click-tweet">
@@ -54,7 +57,7 @@
     </nav>
     <div id="spacer">
     </div>
-    <header class="top">
+    <header id="user-info" class="top">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -67,7 +70,7 @@
     </div>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main id="tweets" class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <span class="error"></span>

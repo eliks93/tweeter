@@ -43,6 +43,33 @@ body {
    top: 0;
  }
 
+
+ 
+
+
  main.move {
    top: -200px
+ }
+
+ @media only screen and (min-width: 1024px) {
+   #user-info {
+    width: 34%;
+    float: left;
+   }
+
+   #tweets {
+    padding-top: 60px;
+    max-width: 1024px;
+    font-size: 16px;
+    margin: 0 auto;
+    width: 66%;
+    float: right;
+    padding-right: 2.5%;
+    padding-left: 2.5%
+    
+   
+   }
+   #nav {
+     background-color: #4056A1
+   }
  }

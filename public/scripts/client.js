@@ -16,10 +16,12 @@ const createdTime = (createdAt) => {
   const days = hours / 24
   const months = days /30
   const years = days / 365
-
+  console.log(currentSeconds, seconds)
   
   if(difference < 60) {
+    
     return "less than a minute";
+    
   } else if (minutes < 60) {
     return `${Math.floor(minutes)} minutes ago`;
   } else if (hours < 24) {
@@ -86,8 +88,9 @@ $(document).ready(function() {
   $('textarea').on('keydown', function() {
     let keyPress = $(event.which);
     if(keyPress[0] === 13) {
+      event.preventDefault();
       $('.submit-tweet').submit();
-      $('textarea').val('')
+    
     }
   })
 
