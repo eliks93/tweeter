@@ -5,32 +5,6 @@
  */
 
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
-
 
 const createdTime = (createdAt) => {
   const currentTime = new Date(); 
@@ -46,8 +20,8 @@ const createdTime = (createdAt) => {
   
   if(difference < 60) {
     return "less than a minute";
-  } else if (Math.floor(minutes) < 60) {
-    return `${minutes} minutes ago`;
+  } else if (minutes < 60) {
+    return `${Math.floor(minutes)} minutes ago`;
   } else if (hours < 24) {
     return  `${Math.floor(hours)} hours ago`;
   } else if (days < 30) {
@@ -59,6 +33,11 @@ const createdTime = (createdAt) => {
   }
 }
 
+const escape =  function(str) {
+  let p = document.createElement('p');
+  p.appendChild(document.createTextNode(str));
+  return p.innerHTML;
+}
 
 const createTweetElement = (tweetData) => {
   const markUp =$(`
@@ -68,7 +47,7 @@ const createTweetElement = (tweetData) => {
     <span class="handle">${tweetData.user.handle}</span>
   </header>
   <div>
-    <p>${tweetData.content.text}</p>
+    <p>${escape(tweetData.content.text)}</p>
   </div> 
   <footer>
       <span class="time">${createdTime(tweetData)}</span>
@@ -87,6 +66,31 @@ const renderTweet = (tweets) => {
   }
 }
 
+const loadTweets = function() {
+  $('.tweet-container').empty();
+  $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+    .then(function(tweets) {
+      renderTweet(tweets)
+  })
+}
+
 $(document).ready(function() {
-  renderTweet(data)
-})
+  loadTweets()
+  $('.submit-tweet').submit(function(event){
+    let data = $(this).serialize()
+    console.log(data)
+    event.preventDefault();
+    if(data.length > 140) {
+      alert("that shizz too long yo")
+      return
+    } else if (data === 'text=') {
+        alert("that shizz is nothing yo")
+        return
+    } else {
+    $.ajax({ type: "POST", url: '/tweets', data: data,})
+      .then(function() {
+          loadTweets()
+    })
+    }
+  })
+});

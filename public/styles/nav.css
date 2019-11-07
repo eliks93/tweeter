@@ -9,8 +9,35 @@ nav {
   
 }
 
-nav span {
+span.logo {
   font-family: 'Bungee', cursive;
   width: 100%;
   
+}
+
+span.write-tweet {
+  font-family: 'Roboto', sans-serif;
+  float: right
+
+}
+
+div.click-tweet {
+  text-align: right;
+  margin-right: 45px;
+  
+}
+
+div.click-tweet button {
+  background-color: Transparent;
+  border: none;
+  outline: none
+}
+
+
+div.click-tweet i {
+  color: #FFFF;
+}
+
+div.click-tweet button:hover i{
+  color:blue
 }

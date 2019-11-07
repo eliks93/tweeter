@@ -37,6 +37,7 @@ module.exports = function(DataHelpers) {
         res.status(500).json({ error: err.message });
       } else {
         res.status(201).send();
+        
       }
     });
   });
