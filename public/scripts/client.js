@@ -17,7 +17,7 @@ const createdTime = (createdAt) => {
   const days = hours / 24
   const months = days /30
   const years = days / 365
-  //variables above keep the if loops simple.
+  //variables above keep the if statements simple.
 
   if(secs < 60) {
     
@@ -79,8 +79,27 @@ const loadTweets = function() {
       renderTweet(tweets)
   })
 }
+
+
+
 // main driver function that actually populates the page and handles the logic of the submit button when new tweet is submitted
 $(document).ready(function() {
+  //auto-expand for text area... it works, however it does keep adding rows for each extra row you make. Not hugely important given text limit, but if somone had small screen and pasted 5000 characters in it would screw with the formatting severely. 
+  $(document)
+    .one('focus.autoExpand', 'textarea.autoExpand', function(){
+        let savedValue = this.value;
+        this.value = '';
+        this.baseScrollHeight = this.scrollHeight;
+        this.value = savedValue;
+    })
+    .on('input.autoExpand', 'textarea.autoExpand', function(){
+        let minRows = this.getAttribute('data-min-rows')|0, rows;
+        this.rows = minRows;
+        rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 12);
+        this.rows = minRows + rows;
+    });
+
+
   // function toggles a class to move the new tweet container up and down when clicked
   $( "main" ).toggleClass('move')
   loadTweets()
@@ -99,10 +118,11 @@ $(document).ready(function() {
     
     }
   })
-
+  // handles the submission logic of tweets. Is invoked any time the submit button is pressed or triggered by pressing enter
   $('.submit-tweet').submit(function(event){
     event.preventDefault();
     let data = $(this).serialize()
+    // checks to see if 0 characters have been entered or too many charcters have been entered and prevents the submission of the form and reload of tweets.
     let counter = $('textarea').val()
     
     if(counter.length > 140) {
@@ -112,10 +132,11 @@ $(document).ready(function() {
         $('span.error').text('Tweet submission left empty')
         return
     } else {
-      
+      // the actual submission of the tweets. the error code is set to an empty string to get rid of it when there is no error which will be the case if the function runs this far
     $('span.error').text('')
     $.ajax({ type: "POST", url: '/tweets', data: data,})
       .then(function() {
+        // resets the text area upon successful submission. The text area will not alter the text if an error is triggered.
         $('textarea').val('')
           loadTweets()
     })
