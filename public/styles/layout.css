@@ -26,6 +26,28 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+ div.bottom {
+  position: fixed;
+  bottom: 0;
+  color: #545149;
+  background-color: transparent;
+  width: 100%;
+  z-index: 3;
+  padding: 1.5em;
+  visibility: hidden;
+ 
+}
+div.bottom i {
+  float: right;
+  padding: 2.5%;
+  font-size: 100px;
+  
+}
+
+.visible {
+  visibility: visible;
+}
+
  #spacer {
    height: 120px;
  }
@@ -42,10 +64,6 @@ body {
    transition-duration: 1s;
    top: 0;
  }
-
-
- 
-
 
  main.move {
    top: -200px

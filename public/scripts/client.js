@@ -87,9 +87,21 @@ const loadTweets = function() {
 }
 
 
+
 // main functionality inside doucment ready. ensures that all data is loaded before functions are invoked.
 
 $(document).ready(function() {
+
+  $(window).scroll(function (event) {
+    let scroll = $(window).scrollTop();
+    console.log(scroll)
+    if(scroll > 400) {
+      $('i').addClass('visible')
+    }
+    if(scroll < 400) {
+      $('i').removeClass('visible')
+    }
+});
 
   //auto-expand for text area... it works, however it does keep adding rows for each extra row you make. Not hugely important given text limit, but if somone had small screen and pasted 5000 characters in it would screw with the formatting severely. 
   $(document)
