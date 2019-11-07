@@ -39,6 +39,9 @@ div.click-tweet i {
 }
 
 div.click-tweet button:hover i{
-  color:blue
+  color: #545149
 }
 
+nav b {
+  font-weight: bold;
+}

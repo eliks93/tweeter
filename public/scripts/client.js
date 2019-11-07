@@ -83,6 +83,14 @@ $(document).ready(function() {
        $('textarea').focus()
     }
   })
+  $('textarea').on('keydown', function() {
+    let keyPress = $(event.which);
+    if(keyPress[0] === 13) {
+      $('.submit-tweet').submit();
+      $('textarea').val('')
+    }
+  })
+
   $('.submit-tweet').submit(function(event){
     event.preventDefault();
     let data = $(this).serialize()
@@ -99,6 +107,7 @@ $(document).ready(function() {
     $('span.error').text('')
     $.ajax({ type: "POST", url: '/tweets', data: data,})
       .then(function() {
+        $('textarea').val('')
           loadTweets()
     })
     }

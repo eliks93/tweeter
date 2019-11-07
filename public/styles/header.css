@@ -7,3 +7,8 @@ header.top {
   text-align: center;
   z-index: 2;
 }
+
+header.top span{
+  font-weight: 300;
+}
+
