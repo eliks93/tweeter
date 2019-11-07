@@ -7,18 +7,19 @@
 
 
 const createdTime = (createdAt) => {
-  const currentTime = new Date(); 
+  const currentTime = Date.now(); 
   const currentSeconds = currentTime / 1000
   const seconds = createdAt.created_at / 1000
   const difference = currentSeconds - seconds;
+  const secs = difference
   const minutes = difference / 60
   const hours = minutes / 60
   const days = hours / 24
   const months = days /30
   const years = days / 365
-  console.log(currentSeconds, seconds)
+console.log(secs)
   
-  if(difference < 60) {
+  if(secs < 60) {
     
     return "less than a minute";
     
