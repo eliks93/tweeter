@@ -11,28 +11,18 @@ const createdTime = (createdAt) => {
   const currentSeconds = currentTime / 1000
   const seconds = createdAt.created_at / 1000
   const difference = currentSeconds - seconds;
-  const secs = difference
-  const minutes = difference / 60
-  const hours = minutes / 60
-  const days = hours / 24
-  const months = days /30
-  const years = days / 365
-  //variables above keep the if statements simple.
-
-  if(secs < 60) {
-    
+  if(difference < 60) {
     return "less than a minute";
-    
-  } else if (minutes < 60) {
-    return `${Math.floor(minutes)} minutes ago`;
-  } else if (hours < 24) {
-    return  `${Math.floor(hours)} hours ago`;
-  } else if (days < 30) {
-    return `${Math.floor(days)} days ago`
-  } else if (Math.floor(months) < 12) {
-    return `${Math.floor(months)} months ago`
+  } else if (difference < 3600) {
+    return `${Math.floor(difference / 60)} minutes ago`;
+  } else if (difference < 86400) {
+    return  `${Math.floor(difference / 3600)} hours ago`;
+  } else if (difference < 2592000) {
+    return `${Math.floor(difference / 86400)} days ago`
+  } else if (difference < 31104000) {
+    return `${Math.floor(difference / 2592000)} months ago`
   } else {
-    return `${Math.floor(years)} years ago`
+    return `${Math.floor(difference / 31104000)} years ago`
   }
 }
 // validate text inputs into our tweets to ensure they are text. Invoked in the create tweet element function
