@@ -11,18 +11,34 @@ const createdTime = (createdAt) => {
   const currentSeconds = currentTime / 1000
   const seconds = createdAt.created_at / 1000
   const difference = currentSeconds - seconds;
+  let s = 's';
   if(difference < 60) {
-    return "less than a minute";
+    return "less than a minute ago";
   } else if (difference < 3600) {
-    return `${Math.floor(difference / 60)} minutes ago`;
+      if(Math.floor(difference / 60) === 1) {
+        s = "";
+      }
+    return `${Math.floor(difference / 60)} minute${s} ago`;
   } else if (difference < 86400) {
-    return  `${Math.floor(difference / 3600)} hours ago`;
+      if(Math.floor(difference / 3600) === 1) {
+        s = "";
+      }
+    return  `${Math.floor(difference / 3600)} hour${s} ago`;
   } else if (difference < 2592000) {
-    return `${Math.floor(difference / 86400)} days ago`
+      if(Math.floor(difference / 86400) === 1) {
+        s = "";
+      }
+    return `${Math.floor(difference / 86400)} day${s} ago`
   } else if (difference < 31104000) {
-    return `${Math.floor(difference / 2592000)} months ago`
+      if(Math.floor(difference / 2592000) === 1) {
+        s = "";
+      }
+    return `${Math.floor(difference / 2592000)} month${s} ago`
   } else {
-    return `${Math.floor(difference / 31104000)} years ago`
+      if(Math.floor(difference / 31104000) === 1) {
+        s = "";
+      }
+    return `${Math.floor(difference / 31104000)} year${s} ago`
   }
 }
 // validate text inputs into our tweets to ensure they are text. Invoked in the create tweet element function
