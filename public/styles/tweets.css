@@ -15,6 +15,9 @@ span.handle {
   visibility: hidden;
   
 }
+article.tweets:hover footer i {
+  visibility: visible;
+}
 
 article.tweets:hover span.handle {
   visibility: visible;
@@ -73,5 +76,6 @@ footer i {
   float: right;
   margin-right: 2%;
   margin-top: 0.75%;
+  visibility: hidden;
 
 }
