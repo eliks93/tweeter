@@ -44,7 +44,7 @@ div.bottom button {
   
 }
 
-div.bottom i:hover {
+div.bottom i.fa-arrow-cirlce-up:hover {
   color: #4056A1;
   font-size: 125px;
   cursor: pointer;

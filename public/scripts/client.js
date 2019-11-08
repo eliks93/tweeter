@@ -99,10 +99,10 @@ $(document).ready(function() {
   $(window).scroll(function(event) {
     let scroll = $(window).scrollTop();
     if (scroll > 400) {
-      $('i').addClass('visible');
+      $('i.top-arrow ').addClass('visible');
     }
     if (scroll < 400) {
-      $('i').removeClass('visible');
+      $('i.top-arrow ').removeClass('visible');
     }
   });
 

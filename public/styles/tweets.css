@@ -8,6 +8,16 @@ article.tweets  {
 
   
 }
+
+footer i {
+  font-size: 50%;
+  float: right;
+  margin-right: 2%;
+  margin-top: 0.75%;
+  visibility: hidden;
+
+}
+
 span.handle {
   margin-top: 21px;
   margin-right: 20px;
@@ -69,13 +79,5 @@ span.time {
   font-size: 50%;
   margin-left: 2%;
   margin-top: 0.75%;
-
-}
-footer i {
-  font-size: 50%;
-  float: right;
-  margin-right: 2%;
-  margin-top: 0.75%;
-  visibility: hidden;
 
 }
