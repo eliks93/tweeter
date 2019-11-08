@@ -42,16 +42,13 @@ textarea {
   margin-bottom: .25em;
 }
 
-.error-container {
-  width: 50%;
-  border-radius: 25px;
-  margin-left: 24%;
-  background-color: #b02828
-}
-
 span.error {
+  font-family: 'Bungee', 'cursive';
+  display: none;
+  float: right;
   z-index: 4;
   size: 200;
-  color: white;
+  color: #b02828;
+  padding-right: 2%;
   
 }

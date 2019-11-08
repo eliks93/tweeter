@@ -138,6 +138,8 @@ $(document).ready(function() {
   });
   // function will submit the text area when enter is pressed. also prevents enter from making new lines
   $('textarea').on('keydown', function() {
+    $('span.error').slideUp();
+  
     let keyPress = $(event.which);
     if (keyPress[0] === 13) {
       event.preventDefault();
@@ -148,15 +150,20 @@ $(document).ready(function() {
   // handles the submission logic of tweets. Is invoked any time the submit button is pressed or triggered by pressing enter
   $('.submit-tweet').submit(function(event) {
     event.preventDefault();
+   
+    
+    
     let data = $(this).serialize();
     // checks to see if 0 characters have been entered or too many charcters have been entered and prevents the submission of the form and reload of tweets.
     let counter = $('textarea').val();
-    
+    $('span.error').text('');
     if (counter.length > 140) {
-      $('span.error').text('Too Many Characters, please shorten tweet and try again');
+      $('span.error').slideUp();
+      $('span.error').text('Too Long').slideDown();
       return;
     } else if (counter.length === 0) {
-      $('span.error').text('Tweet submission left empty, please try again');
+      $('span.error').slideUp();
+      $('span.error').text('Too Short').slideDown();
       return;
     } else {
       // the actual submission of the tweets. the error code is set to an empty string to get rid of it when there is no error which will be the case if the function runs this far
