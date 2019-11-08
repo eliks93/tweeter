@@ -41,7 +41,16 @@ textarea {
   margin-bottom: .25em;
 }
 
+.error-container {
+  width: 50%;
+  border-radius: 25px;
+  margin-left: 24%;
+  background-color: #b02828
+}
+
 span.error {
   z-index: 4;
-  color: red
+  size: 200;
+  color: white;
+  
 }

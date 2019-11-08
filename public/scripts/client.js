@@ -153,10 +153,10 @@ $(document).ready(function() {
     let counter = $('textarea').val();
     
     if (counter.length > 140) {
-      $('span.error').text('Too Many Characters');
+      $('span.error').text('Too Many Characters, please shorten tweet and try again');
       return;
     } else if (counter.length === 0) {
-      $('span.error').text('Tweet submission left empty');
+      $('span.error').text('Tweet submission left empty, please try again');
       return;
     } else {
       // the actual submission of the tweets. the error code is set to an empty string to get rid of it when there is no error which will be the case if the function runs this far
