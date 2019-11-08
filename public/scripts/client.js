@@ -71,6 +71,8 @@ return markUp;
 }
 // renders all tweets contained in the tweet object database and appends them to the end of our tweet container
 const renderTweet = (tweets) => {
+  let sorted = tweets.sort(function(a, b)  { return b.created_at - a.created_at})
+  console.log(sorted)
   for (const tweetData of tweets) {
     const $tweet = createTweetElement(tweetData); 
     $('.tweet-container').append($tweet)
