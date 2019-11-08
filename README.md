@@ -8,10 +8,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 ##Final Product
 
-!["Initial desktop page with placeholder tweets"](https://github.com/eliks93/tinyapp/blob/master/docs/Login-Page.png?raw=true)
-!["Page with new tweets created"](https://github.com/eliks93/tinyapp/blob/master/docs/New-URL-Page.png?raw=true)
-!["Page in mobile view"](https://github.com/eliks93/tinyapp/blob/master/docs/URLS-Page.png?raw=true)
-!["Mobile page showing text area"]()
+!["Initial desktop page with placeholder tweets (text area hidden)"](https://github.com/eliks93/tweeter/blob/master/docs/Screen%20Shot%202019-11-07%20at%205.25.49%20PM.png?raw=true)
+!["Page with new tweets created and scroll up button"](https://raw.githubusercontent.com/eliks93/tweeter/master/docs/Screen%20Shot%202019-11-07%20at%205.26.57%20PM.png)
+!["Page in mobile view"](hhttps://github.com/eliks93/tweeter/blob/master/docs/Screen%20Shot%202019-11-07%20at%205.28.41%20PM.png?raw=true)
+!["Mobile page showing scroll button"](https://github.com/eliks93/tweeter/blob/master/docs/Screen%20Shot%202019-11-07%20at%205.29.09%20PM.png?raw=true)
 
 
 ## Getting Started
@@ -27,6 +27,7 @@ This repository is the starter code for the project: Students will fork and clon
 - Resize window to see the repsonsive design when put into desktop/mobile mode.
 - Submit field hidden until write tweet button is clicked.
 - Scroll to top button hidden until scrolled down the page a suitable amount.
+- Hover over tweets to see handle and flag/retweet/heart icons.
 - Have fun sending tweets by randomly generated users!
 
 ## Dependencies
