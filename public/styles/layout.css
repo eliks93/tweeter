@@ -44,7 +44,7 @@ div.bottom button {
   
 }
 
-div.bottom i.fa-arrow-cirlce-up:hover {
+div.bottom i:hover {
   color: #4056A1;
   font-size: 125px;
   cursor: pointer;
@@ -78,9 +78,12 @@ div.bottom i.fa-arrow-cirlce-up:hover {
 
  @media only screen and (min-width: 1024px) {
    #user-info {
-    width: 34%;
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 32%;
     float: left;
    }
+
 
    #tweets {
     padding-top: 60px;
