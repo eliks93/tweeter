@@ -47,6 +47,7 @@ div.bottom button {
 div.bottom i:hover {
   color: #4056A1;
   font-size: 125px;
+  cursor: pointer;
 
 }
 

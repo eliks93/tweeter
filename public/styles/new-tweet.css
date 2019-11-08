@@ -8,6 +8,7 @@ section input {
   background-color: #4056A1;
   font-family: 'Bungee', 'cursive';
   float: left;
+  cursor: pointer;
 }
 textarea::placeholder {
   color:#545149;

@@ -31,7 +31,8 @@ div.click-tweet {
 div.click-tweet button {
   background-color: Transparent;
   border: none;
-  outline: none
+  outline: none;
+  cursor: pointer;
 }
 
 
@@ -40,7 +41,8 @@ div.click-tweet i {
 }
 
 div.click-tweet button:hover i{
-  color: #545149
+  color: #545149;
+  
 }
 
 nav b {
