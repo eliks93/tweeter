@@ -71,8 +71,8 @@ return markUp;
 }
 // renders all tweets contained in the tweet object database and appends them to the end of our tweet container
 const renderTweet = (tweets) => {
+  //sort fucntionality, returns newer tweets first!
   let sorted = tweets.sort(function(a, b)  { return b.created_at - a.created_at})
-  console.log(sorted)
   for (const tweetData of tweets) {
     const $tweet = createTweetElement(tweetData); 
     $('.tweet-container').append($tweet)
@@ -96,7 +96,6 @@ $(document).ready(function() {
 
   $(window).scroll(function (event) {
     let scroll = $(window).scrollTop();
-    console.log(scroll)
     if(scroll > 400) {
       $('i').addClass('visible')
     }
@@ -104,6 +103,11 @@ $(document).ready(function() {
       $('i').removeClass('visible')
     }
 });
+
+// scrolls to top of page when button is clicked 
+$('.to-top').click(function () {
+  $(window).scrollTop(0)
+})
 
   //auto-expand for text area... it works, however it does keep adding rows for each extra row you make. Not hugely important given text limit, but if somone had small screen and pasted 5000 characters in it would screw with the formatting severely. 
   $(document)

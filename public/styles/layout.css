@@ -37,11 +37,17 @@ body {
   visibility: hidden;
  
 }
-div.bottom i {
+div.bottom button {
   float: right;
   padding: 2.5%;
   font-size: 100px;
   
+}
+
+div.bottom i:hover {
+  color: #4056A1;
+  font-size: 125px;
+
 }
 
 .visible {
