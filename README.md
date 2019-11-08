@@ -10,7 +10,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 !["Initial desktop page with placeholder tweets (text area hidden)"](https://github.com/eliks93/tweeter/blob/master/docs/Screen%20Shot%202019-11-07%20at%205.25.49%20PM.png?raw=true)
 !["Page with new tweets created and scroll up button"](https://raw.githubusercontent.com/eliks93/tweeter/master/docs/Screen%20Shot%202019-11-07%20at%205.26.57%20PM.png)
-!["Page in mobile view"](hhttps://github.com/eliks93/tweeter/blob/master/docs/Screen%20Shot%202019-11-07%20at%205.28.41%20PM.png?raw=true)
+!["Page in mobile view"](https://github.com/eliks93/tweeter/blob/master/docs/Screen%20Shot%202019-11-07%20at%205.28.41%20PM.png?raw=true)
 !["Mobile page showing scroll button"](https://github.com/eliks93/tweeter/blob/master/docs/Screen%20Shot%202019-11-07%20at%205.29.09%20PM.png?raw=true)
 
 
